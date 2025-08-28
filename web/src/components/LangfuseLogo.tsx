@@ -22,7 +22,34 @@ export const LangfuseIcon = ({
   />
 );
 
-const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl" }) => {
+export const OverLabsIcon = ({
+  size = 32,
+  className,
+}: {
+  size?: number;
+  className?: string;
+}) => (
+  <>
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
+      src={`${env.NEXT_PUBLIC_BASE_PATH ?? ""}/OverLabsLight.svg`}
+      width={size}
+      height={size}
+      alt="OverLabs Icon"
+      className={cn("dark:hidden", className)}
+    />
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
+      src={`${env.NEXT_PUBLIC_BASE_PATH ?? ""}/OverLabsDark.svg`}
+      width={size}
+      height={size}
+      alt="OverLabs Icon"
+      className={cn("hidden dark:block", className)}
+    />
+  </>
+);
+
+const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl"; }) => {
   const uiCustomization = useUiCustomization();
 
   if (uiCustomization?.logoLightModeHref && uiCustomization?.logoDarkModeHref) {
@@ -65,7 +92,7 @@ const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl" }) => {
           size === "sm" ? "text-sm" : "text-xl",
         )}
       >
-        Langfuse
+        OverLabs
       </span>
     </div>
   );
