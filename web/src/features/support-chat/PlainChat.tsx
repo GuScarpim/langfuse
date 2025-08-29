@@ -17,7 +17,7 @@ let isWidgetLoaded = false;
 const PlainChat = () => {
   const scriptRef = useRef<HTMLScriptElement | null>(null);
   const updatePlainDataMut = api.plain.updatePlainData.useMutation({
-    onError: () => {}, // Don't show default error toast
+    onError: () => { }, // Don't show default error toast
   });
   const session = useSession();
   const [isWidgetLoadedState, setIsWidgetLoadedState] = useState(false);
@@ -51,8 +51,8 @@ const PlainChat = () => {
           hideBranding: true,
           hideThreadRefs: true,
           logo: {
-            url: "/icon256.png",
-            alt: "Langfuse logo",
+            url: "/icon.svg",
+            alt: "OverLabs logo",
           },
           style: {
             brandColor: "#000000", // This will be used in various places in the chat widget such as the primary chat button and send message button
@@ -202,7 +202,7 @@ export const chatSetCustomer = (customer: {
   });
 };
 
-export const chatSetThreadDetails = (p: { orgId?: string; plan?: Plan }) => {
+export const chatSetThreadDetails = (p: { orgId?: string; plan?: Plan; }) => {
   runOrQueuePlainCallback(() => {
     if (chatLoaded()) {
       window.Plain.update({
