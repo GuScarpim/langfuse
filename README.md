@@ -1,3 +1,16 @@
+<h1>Passo a passo para rodar o projeto:<h1>
+
+<ul>
+   <li>1. pnpm install</li>
+   <li>2. pnpm run infra:dev:up</li>
+   <li>3. pnpm run db:generate</li>
+   <li>4. pnpm run db:migrate</li>
+   <li>5. pnpm run db:seed</li>
+   <li>6. pnpm run dev</li>
+</ul>
+
+
+
 ![Langfuse GitHub Banner](https://langfuse.com/images/docs/github-readme/github-banner.png)
 
 <div align="center">
