@@ -26,7 +26,7 @@ import { usePlan } from "@/src/features/entitlements/hooks";
 import { isSelfHostedPlan, planLabels } from "@langfuse/shared";
 import { StatusBadge } from "@/src/components/layouts/status-badge";
 
-export const VersionLabel = ({ className }: { className?: string }) => {
+export const VersionLabel = ({ className }: { className?: string; }) => {
   const backgroundMigrationStatus = api.backgroundMigrations.status.useQuery(
     undefined,
     {
@@ -52,18 +52,18 @@ export const VersionLabel = ({ className }: { className?: string }) => {
   const selfHostedPlanLabel = !isLangfuseCloud
     ? plan && isSelfHostedPlan(plan)
       ? // self-host plan
-        // TODO: clean up to use planLabels in packages/shared/src/features/entitlements/plans.ts
-        {
-          short: plan === "self-hosted:pro" ? "Pro" : "EE",
-          long: planLabels[plan],
-        }
+      // TODO: clean up to use planLabels in packages/shared/src/features/entitlements/plans.ts
+      {
+        short: plan === "self-hosted:pro" ? "Pro" : "EE",
+        long: planLabels[plan],
+      }
       : // no plan, oss
-        {
-          short: "OSS",
-          long: "Open Source",
-        }
+      {
+        short: "OSS",
+        long: "Open Source",
+      }
     : // null on cloud
-      null;
+    null;
 
   const showBackgroundMigrationStatus =
     !isLangfuseCloud &&

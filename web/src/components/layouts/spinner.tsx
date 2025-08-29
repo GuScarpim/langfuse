@@ -8,9 +8,6 @@ export function Spinner(props: { message: string; }) {
           className="mx-auto animate-spinner-opacity"
           size={240}
         />
-        <h2 className="mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-primary">
-          {props.message} ...
-        </h2>
       </div>
     </div>
   );

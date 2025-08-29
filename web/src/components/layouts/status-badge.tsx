@@ -35,14 +35,14 @@ export const StatusBadge = ({
     dotColor = "animate-ping bg-dark-green";
     dotPingColor = "bg-dark-green";
   } else if (statusCategories.pending.includes(type.toLowerCase())) {
-    badgeColor = "bg-light-yellow text-dark-yellow";
+    badgeColor = "bg-light-yellow text-white";
     dotColor = "animate-ping bg-dark-yellow";
     dotPingColor = "bg-dark-yellow";
   } else if (statusCategories.error.includes(type.toLowerCase())) {
     badgeColor = "bg-light-red text-dark-red";
     showDot = false;
   } else if (statusCategories.completed.includes(type.toLowerCase())) {
-    badgeColor = "bg-light-green text-dark-green";
+    badgeColor = "bg-light-green text-white";
     showDot = false;
   }
 

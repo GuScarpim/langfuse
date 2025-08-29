@@ -59,7 +59,7 @@ const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl"; }) => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={uiCustomization.logoLightModeHref}
-          alt="Langfuse Logo"
+          alt="OverLabs Logo"
           className={cn(
             "group-data-[collapsible=icon]:hidden dark:hidden",
             size === "sm" ? "max-h-4 max-w-14" : "max-h-5 max-w-16",
@@ -68,7 +68,7 @@ const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl"; }) => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={uiCustomization.logoDarkModeHref}
-          alt="Langfuse Logo"
+          alt="OverLabs Logo"
           className={cn(
             "hidden group-data-[collapsible=icon]:hidden dark:block",
             size === "sm" ? "max-h-4 max-w-14" : "max-h-5 max-w-16",
@@ -119,9 +119,9 @@ export const LangfuseLogo = ({
         <Link href="/" className="flex items-center">
           <LangfuseLogotypeOrCustomized size={size} />
         </Link>
-        {version && (
+        {/* {version && (
           <VersionLabel className="ml-2 group-data-[collapsible=icon]:hidden" />
-        )}
+        )} */}
       </div>
     </div>
   );
