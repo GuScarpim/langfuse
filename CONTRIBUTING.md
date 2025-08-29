@@ -361,8 +361,8 @@ The background color of the following component will be `hsl(var(--primary))` an
 | --dark-yellow            | Dark yellow for warning text                                       | LevelColor                       |
 | --light-green            | Light green for success status badge background                    | StatusBadge                      |
 | --dark-green             | Dark green for success status badge text and dot                   | StatusBadge                      |
-| --light-blue             | Light blue for background of Staging label                         | LangfuseLogo                     |
-| --dark-blue              | Dark blue for text and border of Staging label                     | LangfuseLogo                     |
+| --light-blue             | Light blue for background of Staging label                         | OverlabsLogo                     |
+| --dark-blue              | Dark blue for text and border of Staging label                     | OverlabsLogo                     |
 | --accent-light-blue      | Light blue accent for table link hover effect                      | TableLink                        |
 | --accent-dark-blue       | Dark blue accent for table link text                               | TableLink                        |
 

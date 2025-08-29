@@ -204,13 +204,13 @@ export const ROUTES: Route[] = [
     icon: Settings,
     section: RouteSection.Secondary,
   },
-  {
-    title: "Support",
-    icon: LifeBuoy,
-    section: RouteSection.Secondary,
-    pathname: "", // Empty pathname since this is a dropdown
-    menuNode: <SupportMenuDropdown />,
-  },
+  // {
+  //   title: "Support",
+  //   icon: LifeBuoy,
+  //   section: RouteSection.Secondary,
+  //   pathname: "", // Empty pathname since this is a dropdown
+  //   menuNode: <SupportMenuDropdown />,
+  // },
 ];
 
 function CommandMenuTrigger() {

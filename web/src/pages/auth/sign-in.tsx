@@ -61,18 +61,18 @@ export type PageProps = {
     cognito: boolean;
     keycloak: boolean;
     workos:
-      | {
-          organizationId: string;
-        }
-      | {
-          connectionId: string;
-        }
-      | boolean;
+    | {
+      organizationId: string;
+    }
+    | {
+      connectionId: string;
+    }
+    | boolean;
     custom:
-      | {
-          name: string;
-        }
-      | false;
+    | {
+      name: string;
+    }
+    | false;
     sso: boolean;
   };
   runningOnHuggingFaceSpaces: boolean;
@@ -122,7 +122,7 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async () => {
           env.AUTH_KEYCLOAK_ISSUER !== undefined,
         workos:
           env.AUTH_WORKOS_CLIENT_ID !== undefined &&
-          env.AUTH_WORKOS_CLIENT_SECRET !== undefined
+            env.AUTH_WORKOS_CLIENT_SECRET !== undefined
             ? env.AUTH_WORKOS_ORGANIZATION_ID !== undefined
               ? { organizationId: env.AUTH_WORKOS_ORGANIZATION_ID }
               : env.AUTH_WORKOS_CONNECTION_ID !== undefined
@@ -131,9 +131,9 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async () => {
             : false,
         custom:
           env.AUTH_CUSTOM_CLIENT_ID !== undefined &&
-          env.AUTH_CUSTOM_CLIENT_SECRET !== undefined &&
-          env.AUTH_CUSTOM_ISSUER !== undefined &&
-          env.AUTH_CUSTOM_NAME !== undefined
+            env.AUTH_CUSTOM_CLIENT_SECRET !== undefined &&
+            env.AUTH_CUSTOM_ISSUER !== undefined &&
+            env.AUTH_CUSTOM_NAME !== undefined
             ? { name: env.AUTH_CUSTOM_NAME }
             : false,
         sso,
@@ -283,7 +283,7 @@ export function SSOButtons({
                   capture("sign_in:button_click", { provider: "workos" });
                   void signIn("workos", undefined, {
                     connection: (
-                      authProviders.workos as { connectionId: string }
+                      authProviders.workos as { connectionId: string; }
                     ).connectionId,
                   });
                 }}
@@ -300,7 +300,7 @@ export function SSOButtons({
                   capture("sign_in:button_click", { provider: "workos" });
                   void signIn("workos", undefined, {
                     organization: (
-                      authProviders.workos as { organizationId: string }
+                      authProviders.workos as { organizationId: string; }
                     ).organizationId,
                   });
                 }}
@@ -560,7 +560,7 @@ export default function SignIn({
   return (
     <>
       <Head>
-        <title>Sign in | Langfuse</title>
+        <title>Sign in | Overlabs</title>
       </Head>
       <div className="flex flex-1 flex-col py-6 sm:min-h-full sm:justify-center sm:px-6 sm:py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -598,9 +598,9 @@ export default function SignIn({
                     showPasswordStep
                       ? credentialsForm.handleSubmit(onCredentialsSubmit)
                       : (e) => {
-                          e.preventDefault();
-                          void handleContinue();
-                        }
+                        e.preventDefault();
+                        void handleContinue();
+                      }
                   }
                 >
                   {/* Email input – always visible */}
@@ -700,8 +700,8 @@ export default function SignIn({
           }
 
           {!signUpDisabled &&
-          env.NEXT_PUBLIC_SIGN_UP_DISABLED !== "true" &&
-          authProviders.credentials ? (
+            env.NEXT_PUBLIC_SIGN_UP_DISABLED !== "true" &&
+            authProviders.credentials ? (
             <p className="mt-10 text-center text-sm text-muted-foreground">
               No account yet?{" "}
               <Link

@@ -220,9 +220,9 @@ const SingleOrganizationProjectOverviewTile = ({
         label={
           isCloudPlan(org.plan)
             ? {
-                text: planLabels[org.plan],
-                href: `/organization/${org.id}/settings/billing`,
-              }
+              text: planLabels[org.plan],
+              href: `/organization/${org.id}/settings/billing`,
+            }
             : undefined
         }
         actionButtons={
@@ -338,7 +338,7 @@ const Onboarding = () => {
         <CardDescription>
           {canCreateOrgs
             ? "Create an organization to get started. Alternatively, ask your organization admin to invite you."
-            : "You need to get invited to an organization to get started with Langfuse."}
+            : "You need to get invited to an organization to get started with OverLabs."}
         </CardDescription>
       </CardContent>
       <CardFooter className="flex gap-4">
@@ -350,7 +350,7 @@ const Onboarding = () => {
             </Link>
           </Button>
         )}
-        <Button variant="secondary" asChild>
+        {/* <Button variant="secondary" asChild>
           <Link href="https://langfuse.com/docs" target="_blank">
             <BookOpen className="mr-2 h-4 w-4" aria-hidden="true" />
             Docs
@@ -361,7 +361,7 @@ const Onboarding = () => {
             <MessageSquareText className="mr-2 h-4 w-4" aria-hidden="true" />
             Ask AI
           </Link>
-        </Button>
+        </Button> */}
       </CardFooter>
     </Card>
   );

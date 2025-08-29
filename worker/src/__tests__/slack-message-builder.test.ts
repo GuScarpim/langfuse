@@ -107,7 +107,7 @@ describe("SlackMessageBuilder", () => {
         elements: [
           {
             type: "mrkdwn",
-            text: expect.stringMatching(/🕒 .+ \| Langfuse/),
+            text: expect.stringMatching(/🕒 .+ \| Overlabs/),
           },
         ],
       });
@@ -202,7 +202,7 @@ describe("SlackMessageBuilder", () => {
         elements: [
           {
             type: "mrkdwn",
-            text: expect.stringMatching(/🕒 .+ \| Langfuse/),
+            text: expect.stringMatching(/🕒 .+ \| Overlabs/),
           },
         ],
       });

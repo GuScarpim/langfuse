@@ -24,8 +24,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { LangfuseLogo } from "@/src/components/LangfuseLogo";
-import { SidebarNotifications } from "@/src/components/nav/sidebar-notifications";
-import { UsageTracker } from "@/src/ee/features/billing/components/UsageTracker";
 import { type RouteGroup } from "@/src/components/layouts/routes";
 import { ExternalLink, Grid2X2 } from "lucide-react";
 
@@ -59,10 +57,6 @@ export function AppSidebar({
       <SidebarContent>
         <NavMain items={navItems} />
         <div className="flex-1" />
-        <div className="flex flex-col gap-2 p-2">
-          <UsageTracker />
-          <SidebarNotifications />
-        </div>
         <NavMain items={secondaryNavItems} />
       </SidebarContent>
       <SidebarFooter>
@@ -109,10 +103,10 @@ const DemoBadge = () => {
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip="Your Langfuse Organizations">
+            <SidebarMenuButton asChild tooltip="Your OverLabs Organizations">
               <Link href="/">
                 <Grid2X2 className="h-4 w-4" />
-                <span>Your Langfuse Orgs</span>
+                <span>Your OverLabs Orgs</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

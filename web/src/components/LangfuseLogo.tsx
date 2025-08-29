@@ -22,7 +22,34 @@ export const LangfuseIcon = ({
   />
 );
 
-const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl" }) => {
+export const OverLabsIcon = ({
+  size = 32,
+  className,
+}: {
+  size?: number;
+  className?: string;
+}) => (
+  <>
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
+      src={`${env.NEXT_PUBLIC_BASE_PATH ?? ""}/OverLabsLight.svg`}
+      width={size}
+      height={size}
+      alt="OverLabs Icon"
+      className={cn("dark:hidden", className)}
+    />
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
+      src={`${env.NEXT_PUBLIC_BASE_PATH ?? ""}/OverLabsDark.svg`}
+      width={size}
+      height={size}
+      alt="OverLabs Icon"
+      className={cn("hidden dark:block", className)}
+    />
+  </>
+);
+
+const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl"; }) => {
   const uiCustomization = useUiCustomization();
 
   if (uiCustomization?.logoLightModeHref && uiCustomization?.logoDarkModeHref) {
@@ -32,7 +59,7 @@ const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl" }) => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={uiCustomization.logoLightModeHref}
-          alt="Langfuse Logo"
+          alt="OverLabs Logo"
           className={cn(
             "group-data-[collapsible=icon]:hidden dark:hidden",
             size === "sm" ? "max-h-4 max-w-14" : "max-h-5 max-w-16",
@@ -41,7 +68,7 @@ const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl" }) => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={uiCustomization.logoDarkModeHref}
-          alt="Langfuse Logo"
+          alt="OverLabs Logo"
           className={cn(
             "hidden group-data-[collapsible=icon]:hidden dark:block",
             size === "sm" ? "max-h-4 max-w-14" : "max-h-5 max-w-16",
@@ -65,7 +92,7 @@ const LangfuseLogotypeOrCustomized = ({ size }: { size: "sm" | "xl" }) => {
           size === "sm" ? "text-sm" : "text-xl",
         )}
       >
-        Langfuse
+        OverLabs
       </span>
     </div>
   );
@@ -92,9 +119,9 @@ export const LangfuseLogo = ({
         <Link href="/" className="flex items-center">
           <LangfuseLogotypeOrCustomized size={size} />
         </Link>
-        {version && (
+        {/* {version && (
           <VersionLabel className="ml-2 group-data-[collapsible=icon]:hidden" />
-        )}
+        )} */}
       </div>
     </div>
   );
